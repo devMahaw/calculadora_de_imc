@@ -3,31 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteador</title>
+    <title>Calculadora de IMC</title>
+    <link rel="icon" href="build/images/imc.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" href = "./build/styles/main.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "build/styles/main.css">
 </head>
 <body>
-    <main>
-        <h1>Sorteador</h1>
-        <section>
-            <form id = "form-sorteador">
-                <div>
-                    <label for = "numero-maximo">Número máximo</label>
-                    <input type = "number" id = "numero-maximo" required min = "2" value = "2" step = "1">
-                    <button type = "submit">Sortear número</button>
-                </div>
-            </form>
+    <main class = "container">
+        <section class = "image">
+            <img src = "build/images/illustration.svg" alt = "Ilustração exercício">
         </section>
-        <section>
-            <div class = "result">
-                O número sorteado foi <span id = "resultado-valor"></span>
+        <section class = "calculator">
+            <form class = "form">
+                <h1 class = "title">Calculadora - IMC</h1>
+                <div class = "input-box">
+                    <label for = "weight">Peso em Kg</label>
+                    <div class = "input-field">
+                        <i class="fa-solid fa-weight-hanging"></i>
+                        <input type = "number" id = "weight" step = ".01" required>
+                        <span>Kg</span>
+                    </div>
+                </div>
+                <div class = "input-box">
+                    <label for = "height">Altura em metros</label>
+                    <div class = "input-field">
+                        <i class="fa-solid fa-ruler"></i>
+                        <input type = "number" id = "height" step = ".01" required>
+                        <span>m</span>
+                    </div>
+                </div>
+                <button class = "btn-calculate">Calcular</button>
+            </form>
+            <div class = "infos hidden">
+                <div class = "result">
+                    <div class = "bmi">
+                        <span class = "value"></span>
+                        <span>Seu IMC</span>
+                    </div>
+                    <div class = "description">
+                        <span></span>
+                    </div>
+                </div>
+                <div class = "more-info">
+                    <a href = "https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm" target = "_blank">
+                        Mais informações sobre o IMC
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <script src = "source/scripts/main.js"></script>
+    <script type = "text/javascript" src = "//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type = "text/javascript" src = "//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src = "plugins_jquery_calculadora_de_imc/jquery.mask.min.js"></script>
+
+    <script src = "build/scripts/main.js"></script>
 </body>
 </html>
